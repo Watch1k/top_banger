@@ -83,6 +83,9 @@ body {
 .wrap:after {
 	clear: both;
 }
+.block a {
+	text-decoration: none;
+}
 
 
 /* Header
@@ -296,7 +299,6 @@ body {
 .list_news .block {
     width: 31%;
     float: left;
-    height: 370px;
     background: #fff;
     margin-bottom: 60px;
     position: relative;
@@ -309,25 +311,35 @@ body {
 }
 .list_news .block .img {
     overflow: hidden;
-    height: 210px;
+    position: relative;
+}
+.list_news .block .img:before {
+	display: block;
+	content: '';
+	width: 100%;
+	padding-bottom: 56%;
 }
 .list_news .block .img img {
-    min-width: 100%;
-    height: 100%;
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 .list_news .block .text {
     padding: 10px 30px 20px 20px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 160px;
+    height: 126px;
     background: #fff;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-.list_news .block .text .title {margin-bottom:10px;}
-.list_news .block .text .title{
+.list_news .block .text .title {
+	overflow: hidden;
+	margin-bottom:10px;
+	max-height: 50px;
     font-size: 20px;
     line-height: 25px;
     font-weight: 700;
@@ -335,6 +347,8 @@ body {
     color: #111;
 }
 .list_news .block .text .desc{
+	overflow: hidden;
+	max-height: 36px;
     font-size: 14px;
     line-height: 18px;
     text-decoration: none;
@@ -437,39 +451,50 @@ body {
 .right-sidebar .block {
     width: 100%;
     float: left;
-    height: 370px;
     background: #fff;
     margin-bottom: 20px;
     position: relative;
 }
 .right-sidebar .block .img {
     overflow: hidden;
-    height: 210px;
+    position: relative;
+}
+.right-sidebar .block .img:before {
+	display: block;
+	content: '';
+	width: 100%;
+	padding-bottom: 56%;
 }
 .right-sidebar .block .img img {
-    min-width: 100%;
-    height: 100%;
-    vertical-align: bottom;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 100%;
+    width: 100%;
 }
 .right-sidebar .block .text {
     padding: 10px 30px 20px 20px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 160px;
     background: #fff;
+    height: 126px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-.right-sidebar .block .text .title {margin-bottom:10px;}
 .right-sidebar .block .text .title{
+	overflow: hidden;
+	margin-bottom:10px;
+	max-height: 50px;
     font-size: 20px;
+    line-height: 25px;
     font-weight: 700;
     text-decoration: none;
     color: #111;
 }
 .right-sidebar .block .text .desc{
+	overflow: hidden;
+	max-height: 36px;
     font-size: 14px;
     line-height: 18px;
     text-decoration: none;
@@ -514,7 +539,6 @@ body {
 	margin-top: 20px;
 	margin-left: 20px;
 	width: 200px;
-	height: 350px;
 }
 .cards__el > a {
 	display: block;
@@ -522,28 +546,41 @@ body {
 }
 .cards__img {
 	overflow: hidden;
-	height: 200px;
+	position: relative;
+}
+.cards__img:before {
+	display: block;
+	content: '';
+	width: 100%;
+	padding-bottom: 100%;
 }
 .cards__img img {
-	vertical-align: bottom;
-	height: 100%;
-	min-width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	min-height: 100%
 }
 .cards__text {
-	padding: 8px 10px 0;
-	height: 150px;
+	padding: 8px 10px 12px;
+	height: 125px;
 	background-color: #fff;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 .cards__text p {
+	overflow: hidden;
+	max-height: 54px;
 	font-size: 15px;
 	color: #111;
 	line-height: 18px;
 	font-weight: 700;
 }
 .cards__text p + p {
+	max-height: 48px;
 	margin-top: 3px;
 	font-size: 13px;
 	line-height: 16px;
@@ -1272,7 +1309,11 @@ body {
 		margin-top: 10px;
 		width: 48%;
 	}
+	.right-sidebar .block .text {
+		height: 116px;
+	}
 	.right-sidebar .block .text .title {
+		max-height: 40px;
 		font-size: 16px;
 		line-height: 20px;
 	}
@@ -1294,7 +1335,11 @@ body {
 	.main_news .main_text > p > a {
 		padding-left: 20px;
 	}
+	.list_news .block .text {
+		height: 122px;
+	}
 	.list_news .block .text .title {
+		max-height: 46px;
 		font-size: 18px;
 		line-height: 23px;
 	}
@@ -1327,7 +1372,11 @@ body {
 	.section-grey {
 		padding-bottom: 20px;
 	}
+	.right-sidebar .block .text {
+		height: 124px;
+	}
 	.right-sidebar .block .text .title {
+		max-height: 48px;
 		font-size: 18px;
 		line-height: 24px;
 	}
@@ -1359,14 +1408,16 @@ body {
 		text-decoration: none;
 	}
 	.list_news .block .text {
-		height: auto;
+		height: 136px;
 		position: relative;
 	}
 	.list_news .block .text .title {
+		max-height: 56px;
 		font-size: 23px;
 		line-height: 28px;
 	}
 	.list_news .block .text .desc {
+		max-height: 40px;
 		font-size: 16px;
 		line-height: 20px;
 	}
